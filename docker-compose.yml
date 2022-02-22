@@ -1,0 +1,20 @@
+version: '3'
+services:
+  nextjs:
+    build: ./docker/
+    container_name: nextjs
+    volumes:
+      - ./app:/usr/src/app
+    command: "yarn dev"
+    ports:
+      - "3000:3000"
+
+  storybook:
+    build: ./docker/
+    command: "yarn storybook"
+    ports:
+      - "6006:6006"
+    volumes:
+      - ./app:/usr/src/app
+    environment:
+      - NODE_ENV=development
