@@ -1,7 +1,21 @@
 version: '3'
 services:
+  rust:
+    build:
+        context: .
+        dockerfile: ./docker/rust/Dockerfile
+    environment:
+        USER: root
+        command: cargo watch -x "run" -w src
+    volumes:
+        - .:/app:cached
+    stdin_open: true
+    tty: true
+
   nextjs:
-    build: ./docker/
+    build:
+      context: .
+      dockerfile: ./docker/node/Dockerfile
     container_name: nextjs
     volumes:
       - ./app:/usr/src/app
