@@ -12368,6 +12368,11 @@ worker-farm@^1.7.0:
   dependencies:
     errno "~0.1.7"
 
+worker-lib@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/worker-lib/-/worker-lib-1.0.1.tgz#ceb19c49be2b2f5f5e878e3dbe5a04547c8a2c2c"
+  integrity sha512-wby2Z6/b0LqtqjBdDIPMSp4PfhFhYr8Cfwp4Xcq0qF54RZAslA66GJZDGMyBlhuLcERDyFUXTVv7LBD+5sdGtg==
+
 worker-rpc@^0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/worker-rpc/-/worker-rpc-0.1.1.tgz#cb565bd6d7071a8f16660686051e969ad32f54d5"
