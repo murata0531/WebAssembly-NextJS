@@ -16,19 +16,9 @@ services:
     build:
       context: .
       dockerfile: ./docker/node/Dockerfile
-    container_name: nextjs
     volumes:
-      - ./app:/usr/src/app
-    command: "yarn dev"
+      - ./:/usr/src/app
+    command: sh -c "cd app && npm run dev"
     ports:
       - "3000:3000"
-
-  storybook:
-    build: ./docker/
-    command: "yarn storybook"
-    ports:
-      - "6006:6006"
-    volumes:
-      - ./app:/usr/src/app
-    environment:
-      - NODE_ENV=development
+    tty: true
